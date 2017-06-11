@@ -462,11 +462,11 @@ public class MyCode extends x509.v3.CodeV3 {
             List<String> i = new LinkedList<>();
             for(Object alias: Collections.list(keystore.aliases())) {
                 X509Certificate cert = (X509Certificate) keystore.getCertificate(keypair);
-                if (cert.getBasicConstraints() > 0 && !keypair.equals(alias.toString())) {
+                if (cert.getBasicConstraints() != -1 && !keypair.equals(alias.toString())) {
                     i.add(alias.toString());
                 }
             }
-            
+
             return i;
         } catch(Exception e) {
             e.printStackTrace();
