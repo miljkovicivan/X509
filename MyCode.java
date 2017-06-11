@@ -477,18 +477,18 @@ public class MyCode extends x509.v3.CodeV3 {
     @Override
     public boolean generateCSR(String string) {
         try {
-            KeyStore.ProtectionParameter pp = new KeyStore.PasswordProtection(keystore_pass.toCharArray());
-            X509Certificate cert = (X509Certificate) keystore.getCertificate(string);
-            PublicKey publickey = cert.getPublicKey();
-            PrivateKey privatekey = (PrivateKey) keystore.getKey(string, keystore_pass.toCharArray());
-            
-            org.bouncycastle.asn1.x500.X500Name name = new org.bouncycastle.asn1.x500.X500Name(cert.getSubjectDN().getName());
-            PKCS10CertificationRequestBuilder req_builder = new JcaPKCS10CertificationRequestBuilder(name, publickey);
-            
-            JcaContentSignerBuilder builder = new JcaContentSignerBuilder(cert.getSigAlgName());
-            ContentSigner signer = builder.build(privatekey);
-            
-            org.bouncycastle.pkcs.PKCS10CertificationRequest req = req_builder.build(signer);
+//            KeyStore.ProtectionParameter pp = new KeyStore.PasswordProtection(keystore_pass.toCharArray());
+//            X509Certificate cert = (X509Certificate) keystore.getCertificate(string);
+//            PublicKey publickey = cert.getPublicKey();
+//            PrivateKey privatekey = (PrivateKey) keystore.getKey(string, keystore_pass.toCharArray());
+//            
+//            org.bouncycastle.asn1.x500.X500Name name = new org.bouncycastle.asn1.x500.X500Name(cert.getSubjectDN().getName());
+//            PKCS10CertificationRequestBuilder req_builder = new JcaPKCS10CertificationRequestBuilder(name, publickey);
+//            
+//            JcaContentSignerBuilder builder = new JcaContentSignerBuilder(cert.getSigAlgName());
+//            ContentSigner signer = builder.build(privatekey);
+//            
+//            org.bouncycastle.pkcs.PKCS10CertificationRequest req = req_builder.build(signer);
             
             return true;
             
